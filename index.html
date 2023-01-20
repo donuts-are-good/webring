@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>donuts-are-good/webring</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-1 py-3 my-3">🔗 webring</h1>
+                <p class="lead">Webrings are a cool way that you and your friends can link your sites together and share visitors. Clicking the link takes you to the next site in the ring.</p>
+                <br>
+                <h2 class="display-2 py-3 my-3">🤓 how-to</h2>
+                <p class="lead">Starting a webring is easy, and takes about 5 minutes with these 3 steps.</p>
+                <br><br>
+                <h3 class="h3">🗒️ copy it!</h3>
+                Go <a href="https://github.com/donuts-are-good/webring">here</a> and press the fork button. If you don't have a Github account, just click download. If you're feeling generous, also click the <font color="#aabb22">&star;</font> star button :) 
+                <br><br>
+                <h3 class="h3">🚧 add sites!</h3>
+                In the files you just copied, you'll see one called <code>sites.list</code>. Put the sites you want in there one per line, and move to <strong>step 3</strong>!
+                <br><br>
+                <h3 class="h3">📡 send it!</h3>
+                Using the sample code in index.html or the code below, send the snippet to your friends and anybody else who wants to support your webring!
+                <br><br>
+                <div class="px-2 mx-2">
+                    <div class="rounded shadow bg-light m-4 p-4">
+                        <center id="the-basic">
+                            <!-- This is the webring code -->
+                            This site is part of the <a style="text-decoration: none" href="https://github.com/donuts-are-good/webring">donuts-are-good</a> webring :)<br>
+                            <a href="#" onclick="randomSite()">
+                                Click here to visit another site in the ring!
+                            </a>
+                            <script>
+                            // List of sites in the webring
+                            var sites = [];
+    
+                            // Current site index
+                            var currentIndex = 0;
+    
+                            // Fetch the list of sites from a remote URL
+                            fetch('https://raw.githubusercontent.com/donuts-are-good/webring/master/sites.list')
+                            .then(response => response.text())
+                            .then(data => {
+                                // Split the text into an array of lines
+                                sites = data.split('\n');
+                            });
+    
+                            // Go to a random site
+                            function randomSite() {
+                            currentIndex = Math.floor(Math.random() * sites.length);
+                            window.location.href = sites[currentIndex];
+                            }
+                            </script>
+    
+                        </center>
+                    </div>
+                    <center><em class="text-muted">this is a basic demo</em><p>Clicking the link takes you to the next site in the webring.</p></center>
+                </div>
+                <br><br>
+                <br><br>
+
+                <h3 class="h3">🔬 example code</h3>
+                <p>In this example, you can use text as a link, or even a button or image to click on. Use your imagination, this is only a barebones demo.</p>
+
+<pre>
+<code id="htmlViewer" style="color:rgb(67, 79, 84); font-weight:400;background-color:rgb(255, 255, 255);background:rgb(255, 255, 255);display:block;padding: .5em;">This site is part of the <span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">&lt;<span style="color:rgb(0, 151, 157); font-weight:400;background:rgba(0, 0, 0, 0);">a</span> <span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">style</span>=<span style="color:rgb(0, 92, 95); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;text-decoration: none&quot;</span> 
+<span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">href</span>=<span style="color:rgb(0, 92, 95); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;https://github.com/donuts-are-good/webring&quot;</span>&gt;</span>donuts-are-good<span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">&lt;/<span style="color:rgb(0, 151, 157); font-weight:400;background:rgba(0, 0, 0, 0);">a</span>&gt;</span> webring :)
+<span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">&lt;<span style="color:rgb(0, 151, 157); font-weight:400;background:rgba(0, 0, 0, 0);">br</span>&gt;</span>
+<span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">&lt;<span style="color:rgb(0, 151, 157); font-weight:400;background:rgba(0, 0, 0, 0);">a</span> <span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">href</span>=<span style="color:rgb(0, 92, 95); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;#&quot;</span> <span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">onclick</span>=<span style="color:rgb(0, 92, 95); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;randomSite()&quot;</span>&gt;</span>
+    Click here to visit another site in the ring!
+<span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">&lt;/<span style="color:rgb(0, 151, 157); font-weight:400;background:rgba(0, 0, 0, 0);">a</span>&gt;</span>
+<span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">&lt;<span style="color:rgb(0, 151, 157); font-weight:400;background:rgba(0, 0, 0, 0);">script</span>&gt;</span><span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">
+<span style="color:rgb(0, 151, 157); font-weight:400;background:rgba(0, 0, 0, 0);">var</span> sites = [];
+<span style="color:rgb(0, 151, 157); font-weight:400;background:rgba(0, 0, 0, 0);">var</span> currentIndex = <span style="color:rgb(138, 123, 82); font-weight:400;background:rgba(0, 0, 0, 0);">0</span>;
+<span class="hljs-title function_">fetch</span>(<span style="color:rgb(0, 92, 95); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;https://raw.githubusercontent.com/donuts-are-good/webring/master/sites.list&#x27;</span>)
+.<span class="hljs-title function_">then</span>(<span style="color:rgb(114, 142, 0); font-weight:400;background:rgba(0, 0, 0, 0);"><span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">response</span> =&gt;</span> response.<span class="hljs-title function_">text</span>())
+.<span class="hljs-title function_">then</span>(<span style="color:rgb(114, 142, 0); font-weight:400;background:rgba(0, 0, 0, 0);"><span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">data</span> =&gt;</span> {
+    sites = data.<span class="hljs-title function_">split</span>(<span style="color:rgb(0, 92, 95); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;\n&#x27;</span>);
+});
+<span style="color:rgb(0, 151, 157); font-weight:400;background:rgba(0, 0, 0, 0);">function</span> <span class="hljs-title function_">randomSite</span>(<span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);"></span>) {
+currentIndex = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * sites.<span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">length</span>);
+<span class="hljs-variable language_">window</span>.<span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">location</span>.<span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">href</span> = sites[currentIndex];
+}
+</span><span style="color:rgb(67, 79, 84); font-weight:400;background:rgba(0, 0, 0, 0);">&lt;/<span style="color:rgb(0, 151, 157); font-weight:400;background:rgba(0, 0, 0, 0);">script</span>&gt;</span></code></pre>
+<br><br>
+
+                <h2>Greetz!</h2>
+                The Dozens, code-cartel, coach, moritz, rbn, the garrison, ibmcd, stanley, fun shell scripting matrix, and the monster beverage company.
+                <br><br>
+                <h2>License</h2>
+                This code uses the MIT license, not that anybody cares. If you don't know, then don't sweat it.
+                <br><br>
+                <br><br>
+                <center>
+                    <div class="text-muted">Made with <font color="cc0000">&hearts;</font> by 🍩 😋 <strong><a href="https://github.com/donuts-are-good">donuts-are-good</a></strong></div>
+                </center>
+                <br><br>
+                <br><br>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
